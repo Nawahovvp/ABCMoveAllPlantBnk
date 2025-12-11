@@ -35,24 +35,46 @@
         .slowly { background: linear-gradient(135deg, #dfe6e9, #b2bec3); }
         .dead { background: linear-gradient(135deg, #b2bec3, #636e72); }
 
-        /* Controls - Canva-inspired Styling: Vibrant, Clean, Icons */
+        /* Controls */
         .controls { padding: 20px; background: #fff; display: flex; flex-direction: column; gap: 15px; justify-content: flex-start; border-bottom: 1px solid #eee; align-items: flex-start; }
         .filter-row { display: flex; gap: 15px; align-items: center; }
-        .search-row { display: flex; gap: 15px; align-items: center; width: 100%; }
+        .search-row { display: flex; gap: 15px; align-items: center; width: 100%; justify-content: flex-end; }
         .control-group { display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #f0f4ff, #e0eaff); padding: 12px 20px; border-radius: 16px; font-size: 14px; box-shadow: 0 4px 10px rgba(102, 126, 234, 0.1); transition: all 0.3s; }
         .control-group:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(102, 126, 234, 0.2); }
         .control-icon { font-size: 18px; color: #667eea; }
         label { font-weight: 600; color: #2c3e50; display: flex; align-items: center; gap: 5px; }
         select, input[type=number], input[type=text] { padding: 10px 14px; border-radius: 10px; border: 1px solid #ccd1ff; font-size: 14px; background: white; transition: border 0.2s; width: 80px; }
-        select { width: 120px; }
+        select { width: 180px; } /* เผื่อชื่อ Plant ยาวขึ้น */
         input[type=text] { width: 250px; }
         select:focus, input[type=number]:focus, input[type=text]:focus { border-color: #667eea; outline: none; }
         .unit { font-size: 14px; color: #667eea; font-weight: 500; }
-        .export-btn { padding: 12px; background: linear-gradient(135deg, #27ae60, #1e8449); color: white; border: none; border-radius: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 10px; box-shadow: 0 6px 15px rgba(39,174,96,0.4); transition: all 0.3s; flex: 0 1 auto; margin-left: auto; }
+        .export-btn { padding: 12px; background: linear-gradient(135deg, #27ae60, #1e8449); color: white; border: none; border-radius: 16px; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 10px; box-shadow: 0 6px 15px rgba(39,174,96,0.4); transition: all 0.3s; flex: 0 1 auto; }
 
-        /* ตารางใหม่: Responsive Table with Scroll on Small Screens, Canva-like Styling */
+        /* ★ NEW: Graph Button */
+        .graph-btn {
+            padding: 10px;
+            background: #ffffff;
+            border-radius: 50%;
+            border: 1px solid #ccd1ff;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+        .graph-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        .graph-btn img {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* ตาราง */
         .table-container { overflow: auto; max-height: 70vh; position: relative; padding: 0 16px; }
-        table { width: 100%; border-collapse: collapse; min-width: 1400px; /* Minimum width for large tables */ border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background: white; }
+        table { width: 100%; border-collapse: collapse; min-width: 1400px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); background: white; }
         thead { position: sticky; top: 0; z-index: 10; background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
         th { padding: 14px 10px; text-align: left; font-size: 13px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
         th:hover { background: rgba(255,255,255,0.1); }
@@ -90,14 +112,14 @@
         th:nth-child(20), td:nth-child(20),
         th:nth-child(21), td:nth-child(21) { text-align: center; }
 
-        /* Pagination - Centered and Responsive */
+        /* Pagination */
         .pagination { padding: 16px; text-align: center; background: #f8f9fa; font-size: 16px; font-weight: bold; color: #2c3e50; display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; }
         .page-btn { padding: 8px 14px; background: white; border: 1px solid #ddd; border-radius: 8px; cursor: pointer; transition: all 0.2s; }
         .page-btn.active { background: #667eea; color: white; border: none; }
         .page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
         .page-btn:hover:not(.active):not(:disabled) { background: #e9ecef; }
 
-        /* Media Query for Smaller Screens */
+        /* Media Query */
         @media (max-width: 768px) {
             .summary-row { gap: 8px; padding: 8px; }
             .card { flex: 1 1 120px; min-width: 120px; padding: 10px; }
@@ -109,7 +131,7 @@
             .pagination { font-size: 14px; }
         }
 
-        /* Login Modal Styles */
+        /* Login Modal */
         #loginModal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 100; }
         .login-form { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); text-align: center; width: 300px; }
         .login-form input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccd1ff; border-radius: 10px; }
@@ -117,18 +139,58 @@
         .login-form label { display: flex; align-items: center; justify-content: center; gap: 5px; margin: 10px 0; }
         #loginError { color: red; margin-top: 10px; }
 
-        /* Menu Button and Dropdown */
+        /* Menu */
         #menuBtn { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 24px; color: white; cursor: pointer; }
         #userMenu { position: absolute; top: 50px; right: 20px; background: white; padding: 15px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); display: none; text-align: left; }
         #userMenu p { margin: 5px 0; }
         #logoutBtn { padding: 8px; background: #e74c3c; color: white; border: none; border-radius: 8px; cursor: pointer; width: 100%; }
 
-        /* Help Modal Styles */
+        /* Help Modal */
         #helpModal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; z-index: 100; }
         .help-content { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); text-align: left; width: 600px; max-height: 80vh; overflow-y: auto; }
         .help-content h2 { text-align: center; }
         .help-content button { padding: 12px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 10px; cursor: pointer; width: 100%; margin-top: 20px; }
         #helpBtn { padding: 8px; background: #3498db; color: white; border: none; border-radius: 8px; cursor: pointer; width: 100%; margin-top: 10px; }
+
+        /* ★ NEW: Graph Modal */
+        #graphModal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+        .graph-content {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 1000px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .graph-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .graph-header h2 {
+            margin: 0;
+        }
+        #closeGraphBtn {
+            border: none;
+            background: #e74c3c;
+            color: white;
+            border-radius: 8px;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
 
         /* Loader */
         .loader {
@@ -279,11 +341,15 @@
             </div>
         </div>
         <div class="search-row">
-            <div class="control-group">
+            <div class="control-group" style="margin-right:auto;">
                 <label><i class="fas fa-search control-icon"></i> ค้นหา:</label>
                 <input type="text" id="searchInput" placeholder="Material หรือ Description">
             </div>
             <button class="export-btn" id="exportBtn"><i class="fas fa-file-export"></i></button>
+            <!-- ★ NEW: ปุ่มกราฟ -->
+            <button class="graph-btn" id="graphBtn" title="แสดงกราฟมูลค่าตาม Plant">
+                <img src="https://img.icons8.com/ios-filled/50/combo-chart.png" alt="Graph">
+            </button>
         </div>
     </div>
     <div class="table-container" id="tableSection" style="display:none;">
@@ -319,6 +385,7 @@
     </div>
     <div class="pagination" id="pagination" style="display:none;"></div>
 </div>
+
 <!-- Login Modal -->
 <div id="loginModal" style="display: none;">
     <div class="login-form">
@@ -330,54 +397,59 @@
         <div id="loginError"></div>
     </div>
 </div>
+
 <!-- Help Modal -->
 <div id="helpModal" style="display: none;">
     <div class="help-content">
         <h2>คู่มือการใช้งานระบบ ABC Analysis & Smart Ordering System</h2>
         <p><strong>เกี่ยวกับระบบ:</strong> ระบบนี้เป็นเครื่องมือวิเคราะห์อะไหล่ด้วยวิธี ABC Analysis และระบบแนะนำการสั่งซื้ออัจฉริยะ ช่วยในการจัดการสต็อกอะไหล่ให้มีประสิทธิภาพ โดยคำนวณจากข้อมูลการเบิกใช้งาน มูลค่าคงเหลือ และปัจจัยอื่นๆ เพื่อลดต้นทุนและป้องกันสต็อกเกิน</p>
-        
         <h3>ฟังก์ชันหลักและวิธีใช้งาน:</h3>
-        
         <p><strong>1. การเข้าสู่ระบบ (Login):</strong><br>
         - ป้อน IDUser และ Password (ใช้ 4 ตัวท้ายของ IDUser เป็น Password)<br>
         - เลือก "จดจำฉัน" เพื่อเข้าสู่ระบบอัตโนมัติครั้งถัดไป<br>
         - กด "เข้าสู่ระบบ" เพื่อเข้าใช้งาน</p>
-        
         <p><strong>2. เมนูผู้ใช้ (User Menu):</strong><br>
         - กดไอคอนผู้ใช้ที่มุมขวาบนเพื่อเปิดเมนู<br>
         - แสดงรหัสและชื่อผู้ใช้<br>
         - กด "Help" เพื่อเปิดคู่มือนี้<br>
         - กด "Log out" เพื่อออกจากระบบ</p>
-        
         <p><strong>3. การ์ดสรุป (Summary Cards):</strong><br>
         - แสดงข้อมูลสรุป เช่น มูลค่ารวม, Order, OverStock, เบิก/เดือน, Stock Days, After Stock Days<br>
         - กดการ์ดเพื่อกรองข้อมูล เช่น กด "Order" เพื่อแสดงเฉพาะรายการที่แนะนำสั่งซื้อ<br>
         - การ์ด ABC (A, B, C) และ Moving (Fast, Medium, Slow, Slowly, Dead) สำหรับกรองกลุ่มอะไหล่</p>
-        
         <p><strong>4. ตัวควบคุม (Controls):</strong><br>
         - Plant: เลือก Plant เพื่อกรองข้อมูล (เลือก "ทุก Plant" เพื่อแสดงทั้งหมด)<br>
         - Lead Time, Safety, Cover: ปรับจำนวนวันเพื่อคำนวณ ROP, Safety Stock, และแนะนำสั่ง (หน่วยเป็นวัน)<br>
         - ค้นหา: พิมพ์ Material หรือ Description เพื่อค้นหา<br>
         - กดปุ่ม Export เพื่อดาวน์โหลดข้อมูลเป็น CSV</p>
-        
         <p><strong>5. ตารางข้อมูล (Table):</strong><br>
         - แสดงรายละเอียดอะไหล่ เช่น Plant, Material, คงเหลือ, มูลค่า, การใช้งาน (6M, 4M, AvgM, 30Day), Mean, Safety, ROP, DOS, แนะนำสั่ง, ABC, Moving, จำนวนส่งคืน, %สะสม<br>
         - กดหัวคอลัมน์เพื่อเรียงข้อมูล (มีไอคอนลูกศร)<br>
         - เลื่อนลงเพื่อดูข้อมูลเพิ่มเติม</p>
-        
         <p><strong>6. การนำทางหน้า (Pagination):</strong><br>
         - กดปุ่ม <<, <, >, >> เพื่อเปลี่ยนหน้า<br>
         - แสดงข้อมูลทีละ 25 รายการ</p>
-        
         <p><strong>7. การกรองข้อมูล:</strong><br>
         - กดการ์ดสรุปเพื่อกรอง เช่น กด "OverStock" เพื่อแสดงเฉพาะรายการที่สามารถส่งคืนได้<br>
         - การเปลี่ยน Plant จะรีเซ็ตการกรองเป็นค่าเริ่มต้น (แสดงทั้งหมด)<br>
         - การค้นหาจะกรองตามคำที่พิมพ์แบบเรียลไทม์</p>
-        
         <p><strong>หมายเหตุ:</strong> ข้อมูลอัปเดตจากแหล่งข้อมูลภายนอก หากมีปัญหาโปรดติดต่อผู้ดูแลระบบ</p>
         <button id="closeHelpBtn">ปิด</button>
     </div>
 </div>
+
+<!-- ★ NEW: Graph Modal -->
+<div id="graphModal">
+    <div class="graph-content">
+        <div class="graph-header">
+            <h2>กราฟมูลค่า & OverStock ตาม Plant</h2>
+            <button id="closeGraphBtn">ปิด</button>
+        </div>
+        <small>เรียง Company ตาม Stock Days จากมากไปน้อย แล้วต่อด้วย SA ตาม Stock Days จากมากไปน้อย</small>
+        <canvas id="plantChart" height="120"></canvas>
+    </div>
+</div>
+
 <script>
 // ฟังก์ชันแปลงตัวเลขเป็น K / M
 function formatShortCurrency(n) {
@@ -387,6 +459,7 @@ function formatShortCurrency(n) {
     return n.toFixed(2);
 }
 let sortKey = "CumPercent", sortDir = "asc";
+
 document.addEventListener("DOMContentLoaded", function () {
     const userSheetID = '1eqVoLsZxGguEbRCC5rdI4iMVtQ7CK4T3uXRdx8zE3uw';
     const userSheetName = 'UserPlant';
@@ -394,15 +467,61 @@ document.addEventListener("DOMContentLoaded", function () {
     const usageUrl = 'https://opensheet.elk.sh/1P8Frv1zvcuO3qt8seU-zMF0FV0TQHyKXLn9GNHVr6kI/MoveAllsum';
     const inventoryUrl = 'https://opensheet.elk.sh/1OtcgbmQdrI3gKJCGiDge6xuOsrT0GPxdKeFPjpvK3Rg/Sheet1';
     const mainsapUrl = 'https://opensheet.elk.sh/1CkfOIe2nDYBLs5aPGkPyZhOeqJkyS7UQ6tuMzxy-mfk/mainsap';
+
     let allData = [], filteredData = [];
-    let mode = "all", abcFilter = "", movingFilter = ""; // ใช้ตัวแปรแยก
+    let mode = "all", abcFilter = "", movingFilter = "";
     let currentPage = 1;
     const rowsPerPage = 25;
     let users = [];
     let loggedUser = null;
+    let lastBaseData = [];      // ★ NEW: ใช้เก็บชุด baseData ล่าสุด สำหรับกราฟ
+    let plantChart = null;      // ★ NEW: เก็บ instance Chart.js
+
+    // ★ NEW: Mapping Plant → ชื่อ
+    const plantInfo = {
+        "0301": { name: "นวนคร" },
+        "0303": { name: "SA-สงขลา" },
+        "0304": { name: "พระราม 3" },
+        "0305": { name: "ราชบุรี" },
+        "0307": { name: "สุราษฎร์" },
+        "0309": { name: "นครราชสีมา" },
+        "0310": { name: "SA-อุดร 1" },
+        "0311": { name: "ศรีราชา" },
+        "0312": { name: "พิษณุโลก" },
+        "0313": { name: "ภูเก็ต" },
+        "0315": { name: "SA-อยุธยา" },
+        "0319": { name: "ขอนแก่น" },
+        "0320": { name: "ลำปาง" },
+        "0322": { name: "SA-อุดร 2" },
+        "0323": { name: "SA-ลำลูกกา" },
+        "0324": { name: "SA-ปัตตานี" },
+        "0326": { name: "วิภาวดี 62" },
+        "0362": { name: "SA-หนองแขม" },
+        "0363": { name: "SA-ปัากเกร็ด" },
+        "0364": { name: "SA-บางบัวทอง" },
+        "0365": { name: "SA-สมุทรปราการ" },
+        "0366": { name: "เชียงใหม่" },
+        "0367": { name: "SA-ฉะเชิงเทรา" },
+        "0368": { name: "SA-ร้อยเอ็ด" },
+        "0369": { name: "ระยอง" }
+    };
+
+    function getPlantName(code) {
+        return plantInfo[code]?.name || "";
+    }
+    function getPlantLabel(code) {
+        const name = getPlantName(code);
+        return name ? `${code} ${name}` : code;
+    }
+    function getPlantType(code) {
+        const label = getPlantLabel(code);
+        return label.includes("SA") ? "SA" : "Company";
+    }
+
     function toNumber(v) { return parseFloat((v||"0").toString().replace(/,/g,'')) || 0; }
     function formatNumber(n) { return Number(n).toLocaleString('th-TH'); }
     function formatCurrency(n) { return Number(n).toLocaleString('th-TH', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+
     function calculateKeepQty(r) {
         const avg = r.AvgMonthly;
         if (r.Moving === "Dead" || r.Moving === "Slowly") return 1;
@@ -417,6 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (r.Moving === "Fast" && r.ABCValue === "A") return Math.max(10, Math.round(avg * 120));
         return Math.max(1, Math.round(avg * 40));
     }
+
     async function loadUsers() {
         try {
             const res = await fetch(userUrl);
@@ -426,6 +546,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("ไม่สามารถโหลดข้อมูลผู้ใช้ได้");
         }
     }
+
     function checkLogin() {
         const remembered = localStorage.getItem('rememberedUser');
         if (remembered) {
@@ -476,7 +597,6 @@ document.addEventListener("DOMContentLoaded", function () {
         loggedUser = null;
         document.getElementById('userMenu').style.display = 'none';
         document.getElementById('menuBtn').style.display = 'none';
-        // ซ่อนเนื้อหาและแสดง login อีกครั้ง
         document.getElementById("mainCardsSection").style.display = "none";
         document.getElementById("summarySection").style.display = "none";
         document.getElementById("controlsSection").style.display = "none";
@@ -489,12 +609,14 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('userID').textContent = `รหัส: ${loggedUser.IDUser}`;
         document.getElementById('userName').textContent = `ชื่อ: ${loggedUser.Name}`;
     }
+
     document.getElementById('menuBtn').addEventListener('click', () => {
         const menu = document.getElementById('userMenu');
         menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     });
     document.getElementById('logoutBtn').addEventListener('click', logout);
     document.getElementById('loginBtn').addEventListener('click', login);
+
     async function init() {
         await loadUsers();
         if (!checkLogin()) {
@@ -502,105 +624,112 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     init();
+
     async function loadData() {
-   const loader = document.getElementById("loader");
-const summarySection = document.getElementById("summarySection");
-const controlsSection = document.getElementById("controlsSection");
-const tableSection = document.getElementById("tableSection");
-const paginationSection = document.getElementById("pagination"); // ✅ ถูกต้อง
-    // เริ่มโหลด: แสดง loader, ซ่อนเนื้อหา
-    loader.style.display = "block";
-    summarySection.style.display = "none";
-    controlsSection.style.display = "none";
-    tableSection.style.display = "none";
-    paginationSection.style.display = "block";
-    try {
-        const [uRes, iRes, mRes] = await Promise.all([fetch(usageUrl), fetch(inventoryUrl), fetch(mainsapUrl)]);
-        const usage = await uRes.json();
-        const inv = await iRes.json();
-        const mainsap = await mRes.json();
-        const useMap = new Map();
-        const invMap = new Map();
-        const mainsapMap = new Map();
-        usage.forEach(r => {
-            const plant = (r.Plant || '').trim();
-            const material = (r.Material || '').trim();
-            const key = `${plant}-${material}`;
-            useMap.set(key, r);
-        });
-        inv.forEach(r => {
-            const plant = (r.Plant || '').trim();
-            const material = (r.Material || '').trim();
-            const key = `${plant}-${material}`;
-            invMap.set(key, r);
-        });
-        mainsap.forEach(r => {
-            const material = (r.Material || '').trim();
-            mainsapMap.set(material, {
-                Note: r['หมายเหตุ'] || '',
-                MultiplyUnit: toNumber(r['คูณหน่วย']),
-                Product: r.Product || ''
+        const loader = document.getElementById("loader");
+        const summarySection = document.getElementById("summarySection");
+        const controlsSection = document.getElementById("controlsSection");
+        const tableSection = document.getElementById("tableSection");
+        const paginationSection = document.getElementById("pagination");
+        loader.style.display = "block";
+        summarySection.style.display = "none";
+        controlsSection.style.display = "none";
+        tableSection.style.display = "none";
+        paginationSection.style.display = "block";
+
+        try {
+            const [uRes, iRes, mRes] = await Promise.all([fetch(usageUrl), fetch(inventoryUrl), fetch(mainsapUrl)]);
+            const usage = await uRes.json();
+            const inv = await iRes.json();
+            const mainsap = await mRes.json();
+
+            const useMap = new Map();
+            const invMap = new Map();
+            const mainsapMap = new Map();
+
+            usage.forEach(r => {
+                const plant = (r.Plant || '').trim();
+                const material = (r.Material || '').trim();
+                const key = `${plant}-${material}`;
+                useMap.set(key, r);
             });
-        });
-        const allKeys = new Set([...useMap.keys(), ...invMap.keys()]);
-        allData = Array.from(allKeys).map(key => {
-            const [plant, material] = key.split('-');
-            const u = useMap.get(key) || {Qtyissu: 0, Qtyissu6m: 0, '30Day': 0};
-            const i = invMap.get(key) || {Unrestricted: 0, "Value Unrestricted": 0, "Material description": '', "Base Unit of Measure": ''};
-            const main = mainsapMap.get(material) || {Note: '', MultiplyUnit: 1, Product: ''};
-            const qty4m = toNumber(u.Qtyissu);
-            const qty6m = toNumber(u.Qtyissu6m) || Math.round(qty4m * 1.5);
-            const thirtyDay = toNumber(u['30Day']);
-            return {
-                Plant: plant,
-                Material: material,
-                Description: i["Material description"] || '',
-                Unit: i["Base Unit of Measure"] || '',
-                Unrestricted: toNumber(i.Unrestricted),
-                Value: toNumber(i["Value Unrestricted"]),
-                Qty6Month: qty6m,
-                Qty4Month: qty4m,
-                ThirtyDay: thirtyDay,
-                AvgDailyUse: qty4m / 120 ,
-                AvgMonthly: qty4m / 4,
-                SafetyStock:0, ROP:0, DOS:0, RecommendedOrder:0, Mean:0,
-                ABCValue:"", CumPercent:0, Moving:"", IsNonMoving: qty4m === 0,
-                ReturnQty: 0, ReturnValue: 0,
-                Note: main.Note,
-                MultiplyUnit: main.MultiplyUnit,
-                Product: main.Product
-            };
-        });
-        // Fill missing Descriptions
-        const descMap = new Map();
-        allData.forEach(r => {
-            if (r.Description) {
-                descMap.set(r.Material, r.Description);
-            }
-        });
-        allData.forEach(r => {
-            if (!r.Description && descMap.has(r.Material)) {
-                r.Description = descMap.get(r.Material);
-            }
-        });
-        calcABCValue();
-        fillPlantDropdown();
-        setDefaultAndCalculate();
-        // โหลดเสร็จ → แสดงเนื้อหาทั้งหมด
-     loader.style.display = "none";
-        // เปิดทุกส่วนที่ซ่อนไว้
-        document.getElementById("mainCardsSection").style.display = "flex";
-        summarySection.style.display = "flex";
-        controlsSection.style.display = "flex";
-        tableSection.style.display = "block";
-        document.getElementById("pagination").style.display = "block";
-    } catch(e) {
-        loader.style.display = "none";
-        summarySection.style.display = "flex"; // หรือแสดง error
-        alert("โหลดข้อมูลไม่สำเร็จ");
-        console.error(e);
+            inv.forEach(r => {
+                const plant = (r.Plant || '').trim();
+                const material = (r.Material || '').trim();
+                const key = `${plant}-${material}`;
+                invMap.set(key, r);
+            });
+            mainsap.forEach(r => {
+                const material = (r.Material || '').trim();
+                mainsapMap.set(material, {
+                    Note: r['หมายเหตุ'] || '',
+                    MultiplyUnit: toNumber(r['คูณหน่วย']),
+                    Product: r.Product || ''
+                });
+            });
+
+            const allKeys = new Set([...useMap.keys(), ...invMap.keys()]);
+            allData = Array.from(allKeys).map(key => {
+                const [plant, material] = key.split('-');
+                const u = useMap.get(key) || {Qtyissu: 0, Qtyissu6m: 0, '30Day': 0};
+                const i = invMap.get(key) || {Unrestricted: 0, "Value Unrestricted": 0, "Material description": '', "Base Unit of Measure": ''};
+                const main = mainsapMap.get(material) || {Note: '', MultiplyUnit: 1, Product: ''};
+                const qty4m = toNumber(u.Qtyissu);
+                const qty6m = toNumber(u.Qtyissu6m) || Math.round(qty4m * 1.5);
+                const thirtyDay = toNumber(u['30Day']);
+
+                return {
+                    Plant: plant,
+                    Material: material,
+                    Description: i["Material description"] || '',
+                    Unit: i["Base Unit of Measure"] || '',
+                    Unrestricted: toNumber(i.Unrestricted),
+                    Value: toNumber(i["Value Unrestricted"]),
+                    Qty6Month: qty6m,
+                    Qty4Month: qty4m,
+                    ThirtyDay: thirtyDay,
+                    AvgDailyUse: qty4m / 120 ,
+                    AvgMonthly: qty4m / 4,
+                    SafetyStock:0, ROP:0, DOS:0, RecommendedOrder:0, Mean:0,
+                    ABCValue:"", CumPercent:0, Moving:"", IsNonMoving: qty4m === 0,
+                    ReturnQty: 0, ReturnValue: 0,
+                    Note: main.Note,
+                    MultiplyUnit: main.MultiplyUnit,
+                    Product: main.Product
+                };
+            });
+
+            // Fill missing Descriptions
+            const descMap = new Map();
+            allData.forEach(r => {
+                if (r.Description) {
+                    descMap.set(r.Material, r.Description);
+                }
+            });
+            allData.forEach(r => {
+                if (!r.Description && descMap.has(r.Material)) {
+                    r.Description = descMap.get(r.Material);
+                }
+            });
+
+            calcABCValue();
+            fillPlantDropdown();
+            setDefaultAndCalculate();
+
+            loader.style.display = "none";
+            document.getElementById("mainCardsSection").style.display = "flex";
+            summarySection.style.display = "flex";
+            controlsSection.style.display = "flex";
+            tableSection.style.display = "block";
+            document.getElementById("pagination").style.display = "block";
+        } catch(e) {
+            loader.style.display = "none";
+            summarySection.style.display = "flex";
+            alert("โหลดข้อมูลไม่สำเร็จ");
+            console.error(e);
+        }
     }
-}
+
     function calcABCValue() {
         const sorted = [...allData].sort((a,b)=>b.Value-a.Value);
         const total = sorted.reduce((s,r)=>s+r.Value,0);
@@ -615,93 +744,87 @@ const paginationSection = document.getElementById("pagination"); // ✅ ถู�
             }
         });
     }
-    // 1. แก้ recalculateStockFields ให้ return ค่ากลับมา
-function recalculateStockFields(data, params) {
-    data.forEach(r => {
-        const d = r.AvgDailyUse || 0;
-        const leadTime = params.leadTime || 5;
-        const safetyDays = params.safety || 3;
-        const coverDays = params.cover || 40;
-        const safetyStock = d * safetyDays;
-        const rop = (d * leadTime) + safetyStock;
-        const dos = d > 0 ? r.Unrestricted / d : 9999;
-        r.SafetyStock = Math.round(safetyStock);
-        r.ROP = Math.round(rop);
-        r.DOS = dos > 9999 ? 9999 : parseFloat(dos.toFixed(1));
-       
-        // สูตรคำนวณแนะนำสั่งซื้อ (พื้นฐาน)
-        let recommend = 0;
-        if (r.Unrestricted < rop) {
-            const needed = d * coverDays;
-            recommend = needed - r.Unrestricted;
-            if (recommend < 0) recommend = 0;
-        }
-        const multiply = r.MultiplyUnit || 1;
-        if (multiply > 0) {
-            recommend = Math.ceil(recommend / multiply) * multiply;
-        }
-        r.RecommendedOrder = Math.round(recommend);
-       
-        // กำหนด Moving จาก AvgMonthly (เฉลี่ย/เดือน)
-        const avgMonthly = r.Qty4Month / 4;
-        if (avgMonthly === 0) {
-            r.Moving = "Dead";
-        } else if (avgMonthly < 0.7) {
-            r.Moving = "Slowly";
-        } else if (avgMonthly < 12) {
-            r.Moving = "Slow";
-        } else if (avgMonthly < 30) {
-            r.Moving = "Medium";
-        } else {
-            r.Moving = "Fast";
-        }
-       
-        // กำหนด Mean: ค่าสูงสุดระหว่าง ThirtyDay และ AvgMonthly
-        if (r.ThirtyDay > r.AvgMonthly) {
-            r.Mean = r.ThirtyDay;
-        } else {
-            r.Mean = r.AvgMonthly;
-        }
-       
-        // ตรวจสอบเงื่อนไขที่ทำให้ไม่สั่งซื้อ
-       
-        // เงื่อนไข 1: Mean = 0 AND (Moving = Slow OR Moving = Slowly) → ไม่สั่ง
-        if (r.Mean === 0 && (r.Moving === "Slow" || r.Moving === "Slowly")) {
-            r.RecommendedOrder = 0;
-        }
-       
-        // เงื่อนไข 2: ThirtyDay = 0 AND (Moving = Slow OR Moving = Slowly) → ไม่สั่ง
-        if (r.ThirtyDay === 0 && (r.Moving === "Slow" || r.Moving === "Slowly")) {
-            r.RecommendedOrder = 0;
-        }
-       
-        // เงื่อนไข 3: ThirtyDay >= Qty4Month AND Moving = Slowly → ไม่สั่ง
-        if (r.ThirtyDay >= r.Qty4Month && r.Moving === "Slowly") {
-            r.RecommendedOrder = 0;
-        }
-       
-        // ส่งคืน
-        const keepQty = calculateKeepQty(r);
-        const returnQty = Math.max(0, r.Unrestricted - keepQty);
-        const unitPrice = r.Unrestricted > 0 ? r.Value / r.Unrestricted : 0;
-        const returnValue = returnQty * unitPrice;
-        r.ReturnQty = Math.round(returnQty);
-        r.ReturnValue = returnValue;
-    });
-}
+
+    function recalculateStockFields(data, params) {
+        data.forEach(r => {
+            const d = r.AvgDailyUse || 0;
+            const leadTime = params.leadTime || 5;
+            const safetyDays = params.safety || 3;
+            const coverDays = params.cover || 40;
+            const safetyStock = d * safetyDays;
+            const rop = (d * leadTime) + safetyStock;
+            const dos = d > 0 ? r.Unrestricted / d : 9999;
+            r.SafetyStock = Math.round(safetyStock);
+            r.ROP = Math.round(rop);
+            r.DOS = dos > 9999 ? 9999 : parseFloat(dos.toFixed(1));
+
+            let recommend = 0;
+            if (r.Unrestricted < rop) {
+                const needed = d * coverDays;
+                recommend = needed - r.Unrestricted;
+                if (recommend < 0) recommend = 0;
+            }
+            const multiply = r.MultiplyUnit || 1;
+            if (multiply > 0) {
+                recommend = Math.ceil(recommend / multiply) * multiply;
+            }
+            r.RecommendedOrder = Math.round(recommend);
+
+            const avgMonthly = r.Qty4Month / 4;
+            if (avgMonthly === 0) {
+                r.Moving = "Dead";
+            } else if (avgMonthly < 0.7) {
+                r.Moving = "Slowly";
+            } else if (avgMonthly < 12) {
+                r.Moving = "Slow";
+            } else if (avgMonthly < 30) {
+                r.Moving = "Medium";
+            } else {
+                r.Moving = "Fast";
+            }
+
+            if (r.ThirtyDay > r.AvgMonthly) {
+                r.Mean = r.ThirtyDay;
+            } else {
+                r.Mean = r.AvgMonthly;
+            }
+
+            if (r.Mean === 0 && (r.Moving === "Slow" || r.Moving === "Slowly")) {
+                r.RecommendedOrder = 0;
+            }
+            if (r.ThirtyDay === 0 && (r.Moving === "Slow" || r.Moving === "Slowly")) {
+                r.RecommendedOrder = 0;
+            }
+            if (r.ThirtyDay >= r.Qty4Month && r.Moving === "Slowly") {
+                r.RecommendedOrder = 0;
+            }
+
+            const keepQty = calculateKeepQty(r);
+            const returnQty = Math.max(0, r.Unrestricted - keepQty);
+            const unitPrice = r.Unrestricted > 0 ? r.Value / r.Unrestricted : 0;
+            const returnValue = returnQty * unitPrice;
+            r.ReturnQty = Math.round(returnQty);
+            r.ReturnValue = returnValue;
+        });
+    }
+
     function fillPlantDropdown() {
         const sel = document.getElementById("plantFilter");
         const plants = [...new Set(allData.map(r=>r.Plant))].filter(Boolean).sort();
         sel.innerHTML = '<option value="">ทุก Plant</option>';
-        plants.forEach(p => sel.add(new Option(p,p)));
+        plants.forEach(code => {
+            sel.add(new Option(getPlantLabel(code), code));
+        });
     }
+
     function setDefaultAndCalculate() {
         const sel = document.getElementById("plantFilter");
         sel.value = "";
         mode = "all"; abcFilter = ""; movingFilter = "";
         applyFiltersAndRender();
     }
-document.getElementById("tableHeader").addEventListener("click", function(e) {
+
+    document.getElementById("tableHeader").addEventListener("click", function(e) {
         const col = e.target.closest("th[data-sort]");
         if (!col) return;
         const key = col.getAttribute("data-sort");
@@ -713,230 +836,182 @@ document.getElementById("tableHeader").addEventListener("click", function(e) {
         }
         applyFiltersAndRender();
     });
-    // 2. แก้ applyFiltersAndRender ให้รับค่ากลับมา
-function applyFiltersAndRender() {
-    let data = [...allData];
 
-    // Filter ตาม Plant
-    const plant = document.getElementById("plantFilter").value;
-    if (plant) {
-        data = data.filter(r => r.Plant === plant);
-    }
+    // ★ CORE FILTER LOGIC
+    function applyFiltersAndRender() {
+        let data = [...allData];
 
-    // Filter ตาม Search
-    const search = document.getElementById("searchInput").value.toLowerCase();
-    if (search) {
-        data = data.filter(r =>
-            r.Material.toLowerCase().includes(search) ||
-            r.Description.toLowerCase().includes(search)
-        );
-    }
+        const plant = document.getElementById("plantFilter").value;
+        if (plant) {
+            data = data.filter(r => r.Plant === plant);
+        }
 
-    // พารามิเตอร์คำนวณสต็อก
-    const params = {
-        leadTime: parseInt(document.getElementById("leadTimeDays").value) || 5,
-        safety: parseInt(document.getElementById("safetyDays").value) || 3,
-        cover: parseInt(document.getElementById("coverDays").value) || 40
-    };
+        const search = document.getElementById("searchInput").value.toLowerCase();
+        if (search) {
+            data = data.filter(r =>
+                r.Material.toLowerCase().includes(search) ||
+                r.Description.toLowerCase().includes(search)
+            );
+        }
 
-    // คำนวณ ROP / Safety / ReturnQty ฯลฯ ให้กับ "ชุดฐาน"
-    recalculateStockFields(data, params);
-
-    // baseData = ชุดข้อมูลหลัก (ตาม Plant + Search เท่านั้น)
-    const baseData = [...data];
-
-    // ชุดข้อมูลสำหรับแต่ละกลุ่ม
-    let dataForABC = [...data];      // ใช้คำนวณ Card ABC
-    let dataForMoving = [...data];   // ใช้คำนวณ Card Moving
-    let dataForTable = [...data];    // ใช้แสดงในตาราง (โดนทุกฟิลเตอร์)
-
-    // ---------------------------
-    // 1) ใช้ Card หลักเป็นตัวกำหนด "mode" → กระทบ ABC / Moving / Table
-    // ---------------------------
-    if (mode === "onlyOrder") {
-        const isOrder = (r) => Math.round(r.RecommendedOrder || 0) >= 1;
-        dataForABC = dataForABC.filter(isOrder);
-        dataForMoving = dataForMoving.filter(isOrder);
-        dataForTable = dataForTable.filter(isOrder);
-    } else if (mode === "returnable") {
-        const isReturnable = (r) => r.ReturnQty > 0;
-        dataForABC = dataForABC.filter(isReturnable);
-        dataForMoving = dataForMoving.filter(isReturnable);
-        dataForTable = dataForTable.filter(isReturnable);
-    } else if (mode === "afterReturn") {
-        const applyAfterReturn = (r) => {
-            const newUnrestricted = r.Unrestricted - r.ReturnQty;
-            const unitPrice = r.Unrestricted > 0 ? r.Value / r.Unrestricted : 0;
-            const newValue = newUnrestricted * unitPrice;
-            return {
-                ...r,
-                Unrestricted: newUnrestricted,
-                Value: newValue
-            };
+        const params = {
+            leadTime: parseInt(document.getElementById("leadTimeDays").value) || 5,
+            safety: parseInt(document.getElementById("safetyDays").value) || 3,
+            cover: parseInt(document.getElementById("coverDays").value) || 40
         };
-        dataForABC = dataForABC.map(applyAfterReturn);
-        dataForMoving = dataForMoving.map(applyAfterReturn);
-        dataForTable = dataForTable.map(applyAfterReturn);
-    }
 
-    // ---------------------------
-    // 2) ABC Filter → ให้กระทบ Moving + Table
-    //    (Card ABC ใช้ชุดก่อนฟิลเตอร์ตัวเอง เพื่อให้เป็น "ตัวหลัก" ในระดับนี้)
-    // ---------------------------
-    if (abcFilter) {
-        dataForMoving = dataForMoving.filter(r => r.ABCValue === abcFilter);   // ให้ Moving เปลี่ยนตาม ABC
-        dataForTable = dataForTable.filter(r => r.ABCValue === abcFilter);     // ตาราง = Intersection
-        // dataForABC ไม่ฟิลเตอร์ด้วย abcFilter เพื่อให้ Card ABC ยังเป็นค่าเดียวกันทั้งชุด (ภายใน mode)
-    }
+        recalculateStockFields(data, params);
+        const baseData = [...data];
+        lastBaseData = baseData; // ★ ให้กราฟใช้ฐานเดียวกับ Card หลัก / Plant Filter / Search
 
-    // ---------------------------
-    // 3) Moving Filter → ให้กระทบ ABC + Table
-    //    (Card Moving ใช้ชุดก่อนฟิลเตอร์ตัวเอง)
-    // ---------------------------
-    if (movingFilter) {
-        dataForABC = dataForABC.filter(r => r.Moving === movingFilter);        // ให้ ABC เปลี่ยนตาม Moving
-        dataForTable = dataForTable.filter(r => r.Moving === movingFilter);    // ตาราง = Intersection
-        // dataForMoving ไม่ฟิลเตอร์ด้วย movingFilter เพื่อให้ Card Moving เป็นตัวหลัก
-    }
+        let dataForABC = [...data];
+        let dataForMoving = [...data];
+        let dataForTable = [...data];
 
-    // ---------------------------
-    // 4) Sort เฉพาะชุดที่ใช้แสดงในตาราง
-    // ---------------------------
-    dataForTable.sort((a, b) => {
-        let x = a[sortKey] || 0;
-        let y = b[sortKey] || 0;
-        if (typeof x === "string") x = x.toLowerCase();
-        if (typeof y === "string") y = y.toLowerCase();
-        return sortDir === "asc" ? (x > y ? 1 : -1) : (x < y ? 1 : -1);
-    });
-
-    filteredData = dataForTable;
-    currentPage = 1;
-
-    renderTable();
-    renderPagination();
-
-    // อัปเดตทุก Card
-    updateAllCards(baseData, dataForABC, dataForMoving, dataForTable);
-}
-  // 3. แก้ updateAllCards ให้ไม่ใช้ totalReturnValue อีก (เพราะอัปเดตไปแล้ว)
-function updateAllCards(baseData, dataForABC, dataForMoving, tableData) {
-    // ---------------------------
-    // 1) Card หลัก (มูลค่ารวม / Order / OverStock / เบิก/เดือน / Stock Days)
-    //    → ใช้ฐานข้อมูล baseData (โดนแค่ Plant + Search + Param)
-    //    → ไม่เปลี่ยนตามการกด Card ABC / Moving
-    // ---------------------------
-    let totalStock = 0;
-    let orderItems = 0;
-    let orderValue = 0;
-    let returnCount = 0;
-    let totalReturnValue = 0;
-    let total_usage_4m_base = 0;
-
-    baseData.forEach(r => {
-        totalStock += r.Value;
-
-        const unit_price = r.Unrestricted > 0 ? r.Value / r.Unrestricted : 0;
-        const qtyOrder = Math.round(r.RecommendedOrder || 0);
-
-        if (qtyOrder > 0) {
-            orderItems++;
-            orderValue += qtyOrder * unit_price;
+        if (mode === "onlyOrder") {
+            const isOrder = (r) => Math.round(r.RecommendedOrder || 0) >= 1;
+            dataForABC = dataForABC.filter(isOrder);
+            dataForMoving = dataForMoving.filter(isOrder);
+            dataForTable = dataForTable.filter(isOrder);
+        } else if (mode === "returnable") {
+            const isReturnable = (r) => r.ReturnQty > 0;
+            dataForABC = dataForABC.filter(isReturnable);
+            dataForMoving = dataForMoving.filter(isReturnable);
+            dataForTable = dataForTable.filter(isReturnable);
+        } else if (mode === "afterReturn") {
+            const applyAfterReturn = (r) => {
+                const newUnrestricted = r.Unrestricted - r.ReturnQty;
+                const unitPrice = r.Unrestricted > 0 ? r.Value / r.Unrestricted : 0;
+                const newValue = newUnrestricted * unitPrice;
+                return {
+                    ...r,
+                    Unrestricted: newUnrestricted,
+                    Value: newValue
+                };
+            };
+            dataForABC = dataForABC.map(applyAfterReturn);
+            dataForMoving = dataForMoving.map(applyAfterReturn);
+            dataForTable = dataForTable.map(applyAfterReturn);
         }
 
-        if (r.ReturnQty > 0) {
-            returnCount++;
-            totalReturnValue += r.ReturnValue;
+        if (abcFilter) {
+            dataForMoving = dataForMoving.filter(r => r.ABCValue === abcFilter);
+            dataForTable = dataForTable.filter(r => r.ABCValue === abcFilter);
         }
 
-        if (r.Qty4Month && unit_price > 0) {
-            total_usage_4m_base += r.Qty4Month * unit_price;
+        if (movingFilter) {
+            dataForABC = dataForABC.filter(r => r.Moving === movingFilter);
+            dataForTable = dataForTable.filter(r => r.Moving === movingFilter);
         }
-    });
 
-    const monthly_withdrawal = total_usage_4m_base / 4 || 0;
-    const daily_usage = total_usage_4m_base / 120 || 0;
-    const stock_days = daily_usage > 0 ? Math.round(totalStock / daily_usage) : "N/A";
-    const after_stock_days = daily_usage > 0
-        ? Math.round((totalStock - totalReturnValue) / daily_usage)
-        : "N/A";
+        dataForTable.sort((a, b) => {
+            let x = a[sortKey] || 0;
+            let y = b[sortKey] || 0;
+            if (typeof x === "string") x = x.toLowerCase();
+            if (typeof y === "string") y = y.toLowerCase();
+            return sortDir === "asc" ? (x > y ? 1 : -1) : (x < y ? 1 : -1);
+        });
 
-    // ---------------------------
-    // 2) ABC Cards → ใช้ชุด dataForABC
-    //    (มีผลจาก Card หลัก + Moving filter แต่ไม่โดน abcFilter ตัวเอง)
-    // ---------------------------
-    const abc = { A: 0, B: 0, C: 0 };
-    const cntABC = { A: 0, B: 0, C: 0 };
+        filteredData = dataForTable;
+        currentPage = 1;
 
-    dataForABC.forEach(r => {
-        if (!r.ABCValue) return;
-        if (abc[r.ABCValue] === undefined) return;
-        abc[r.ABCValue] += r.Value;
-        cntABC[r.ABCValue]++;
-    });
+        renderTable();
+        renderPagination();
+        updateAllCards(baseData, dataForABC, dataForMoving, dataForTable);
+    }
 
-    // ---------------------------
-    // 3) Moving Cards → ใช้ชุด dataForMoving
-    //    (มีผลจาก Card หลัก + abcFilter แต่ไม่โดน movingFilter ตัวเอง)
-    // ---------------------------
-    const mov = { Fast: 0, Medium: 0, Slow: 0, Slowly: 0, Dead: 0 };
-    const cntMov = { Fast: 0, Medium: 0, Slow: 0, Slowly: 0, Dead: 0 };
+    function updateAllCards(baseData, dataForABC, dataForMoving, tableData) {
+        let totalStock = 0;
+        let orderItems = 0;
+        let orderValue = 0;
+        let returnCount = 0;
+        let totalReturnValue = 0;
+        let total_usage_4m_base = 0;
 
-    dataForMoving.forEach(r => {
-        if (!r.Moving) return;
-        if (mov[r.Moving] === undefined) return;
-        mov[r.Moving] += r.Value;
-        cntMov[r.Moving]++;
-    });
+        baseData.forEach(r => {
+            totalStock += r.Value;
+            const unit_price = r.Unrestricted > 0 ? r.Value / r.Unrestricted : 0;
+            const qtyOrder = Math.round(r.RecommendedOrder || 0);
 
-    // ---------------------------
-    // 4) Update DOM
-    // ---------------------------
+            if (qtyOrder > 0) {
+                orderItems++;
+                orderValue += qtyOrder * unit_price;
+            }
+            if (r.ReturnQty > 0) {
+                returnCount++;
+                totalReturnValue += r.ReturnValue;
+            }
+            if (r.Qty4Month && unit_price > 0) {
+                total_usage_4m_base += r.Qty4Month * unit_price;
+            }
+        });
 
-    // Main cards (มูลค่ารวม / Order / OverStock / เบิก / Stock Days)
-    document.getElementById("totalStockValue").textContent = formatShortCurrency(totalStock);
-    document.getElementById("orderTotalValue").textContent = formatShortCurrency(orderValue);
-    document.getElementById("returnValue").textContent = formatShortCurrency(totalReturnValue);
-    document.getElementById("orderItemCount").textContent = orderItems;
-    document.getElementById("returnItemCount").textContent = returnCount + " รายการ";
+        const monthly_withdrawal = total_usage_4m_base / 4 || 0;
+        const daily_usage = total_usage_4m_base / 120 || 0;
+        const stock_days = daily_usage > 0 ? Math.round(totalStock / daily_usage) : "N/A";
+        const after_stock_days = daily_usage > 0
+            ? Math.round((totalStock - totalReturnValue) / daily_usage)
+            : "N/A";
 
-    document.getElementById("monthlyWithdrawalValue").textContent = formatShortCurrency(monthly_withdrawal);
-    document.getElementById("stockDaysValue").textContent =
-        typeof stock_days === "number"
-            ? (stock_days > 9999 ? "มาก" : stock_days)
-            : stock_days;
-    document.getElementById("afterStockDaysValue").textContent =
-        typeof after_stock_days === "number"
-            ? (after_stock_days > 9999 ? "มาก" : after_stock_days)
-            : after_stock_days;
+        const abc = { A: 0, B: 0, C: 0 };
+        const cntABC = { A: 0, B: 0, C: 0 };
 
-    // จำนวนรายการในตาราง (ตาม Card ทั้งหมดที่กด)
-    document.getElementById("totalCount").textContent = tableData.length + " รายการ";
+        dataForABC.forEach(r => {
+            if (!r.ABCValue) return;
+            if (abc[r.ABCValue] === undefined) return;
+            abc[r.ABCValue] += r.Value;
+            cntABC[r.ABCValue]++;
+        });
 
-    // ABC cards
-    document.getElementById("sumA").textContent = formatShortCurrency(abc.A);
-    document.getElementById("sumB").textContent = formatShortCurrency(abc.B);
-    document.getElementById("sumC").textContent = formatShortCurrency(abc.C);
+        const mov = { Fast: 0, Medium: 0, Slow: 0, Slowly: 0, Dead: 0 };
+        const cntMov = { Fast: 0, Medium: 0, Slow: 0, Slowly: 0, Dead: 0 };
 
-    document.getElementById("countA").textContent = cntABC.A + " รายการ";
-    document.getElementById("countB").textContent = cntABC.B + " รายการ";
-    document.getElementById("countC").textContent = cntABC.C + " รายการ";
+        dataForMoving.forEach(r => {
+            if (!r.Moving) return;
+            if (mov[r.Moving] === undefined) return;
+            mov[r.Moving] += r.Value;
+            cntMov[r.Moving]++;
+        });
 
-    // Moving cards
-    document.getElementById("valFast").textContent = formatShortCurrency(mov.Fast);
-    document.getElementById("valMedium").textContent = formatShortCurrency(mov.Medium);
-    document.getElementById("valSlow").textContent = formatShortCurrency(mov.Slow);
-    document.getElementById("valSlowly").textContent = formatShortCurrency(mov.Slowly);
-    document.getElementById("valDead").textContent = formatShortCurrency(mov.Dead);
+        document.getElementById("totalStockValue").textContent = formatShortCurrency(totalStock);
+        document.getElementById("orderTotalValue").textContent = formatShortCurrency(orderValue);
+        document.getElementById("returnValue").textContent = formatShortCurrency(totalReturnValue);
+        document.getElementById("orderItemCount").textContent = orderItems;
+        document.getElementById("returnItemCount").textContent = returnCount + " รายการ";
+        document.getElementById("monthlyWithdrawalValue").textContent = formatShortCurrency(monthly_withdrawal);
+        document.getElementById("stockDaysValue").textContent =
+            typeof stock_days === "number"
+                ? (stock_days > 9999 ? "มาก" : stock_days)
+                : stock_days;
+        document.getElementById("afterStockDaysValue").textContent =
+            typeof after_stock_days === "number"
+                ? (after_stock_days > 9999 ? "มาก" : after_stock_days)
+                : after_stock_days;
 
-    document.getElementById("countFast").textContent = cntMov.Fast + " รายการ";
-    document.getElementById("countMedium").textContent = cntMov.Medium + " รายการ";
-    document.getElementById("countSlow").textContent = cntMov.Slow + " รายการ";
-    document.getElementById("countSlowly").textContent = cntMov.Slowly + " รายการ";
-    document.getElementById("countDead").textContent = cntMov.Dead + " รายการ";
-}
-   
-function renderTable() {
+        document.getElementById("totalCount").textContent = tableData.length + " รายการ";
+
+        document.getElementById("sumA").textContent = formatShortCurrency(abc.A);
+        document.getElementById("sumB").textContent = formatShortCurrency(abc.B);
+        document.getElementById("sumC").textContent = formatShortCurrency(abc.C);
+
+        document.getElementById("countA").textContent = cntABC.A + " รายการ";
+        document.getElementById("countB").textContent = cntABC.B + " รายการ";
+        document.getElementById("countC").textContent = cntABC.C + " รายการ";
+
+        document.getElementById("valFast").textContent = formatShortCurrency(mov.Fast);
+        document.getElementById("valMedium").textContent = formatShortCurrency(mov.Medium);
+        document.getElementById("valSlow").textContent = formatShortCurrency(mov.Slow);
+        document.getElementById("valSlowly").textContent = formatShortCurrency(mov.Slowly);
+        document.getElementById("valDead").textContent = formatShortCurrency(mov.Dead);
+
+        document.getElementById("countFast").textContent = cntMov.Fast + " รายการ";
+        document.getElementById("countMedium").textContent = cntMov.Medium + " รายการ";
+        document.getElementById("countSlow").textContent = cntMov.Slow + " รายการ";
+        document.getElementById("countSlowly").textContent = cntMov.Slowly + " รายการ";
+        document.getElementById("countDead").textContent = cntMov.Dead + " รายการ";
+    }
+
+    function renderTable() {
         const container = document.getElementById("dataList");
         container.innerHTML = "";
         const start = (currentPage-1)*rowsPerPage;
@@ -954,7 +1029,7 @@ function renderTable() {
                               orderQty <= 200 ? "order-51-200" : "order-200";
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td>${r.Plant}</td>
+                <td>${getPlantLabel(r.Plant)}</td>
                 <td class="material">${r.Material}</td>
                 <td class="desc">${r.Description}</td>
                 <td>${r.Unit}</td>
@@ -980,6 +1055,7 @@ function renderTable() {
             container.appendChild(row);
         });
     }
+
     function renderPagination() {
         const totalPages = Math.max(1, Math.ceil(filteredData.length / rowsPerPage));
         const p = document.getElementById("pagination");
@@ -999,12 +1075,13 @@ function renderTable() {
         p.appendChild(createBtn(">", currentPage + 1, currentPage === totalPages));
         p.appendChild(createBtn(">>", totalPages, currentPage === totalPages));
     }
+
     function exportToCSV() {
         const headers = ["Plant","Material","รายการอะไหล่","หน่วย","คงเหลือ","มูลค่า","ใช้ 6 เดือน","ใช้ 4 เดือน","เฉลี่ย/ด.","30Day","Mean","Safety","ROP","DOS","แนะนำสั่งซื้อ","หมายเหตุ","คูณหน่วย","Product","ABC","Moving","ส่งคืนได้ (ชิ้น)","% สะสม"];
         let csv = "\uFEFF" + headers.join(",") + "\n";
         filteredData.forEach(r => {
             const row = [
-                r.Plant, r.Material, r.Description.replace(/"/g, '""'), r.Unit,
+                getPlantLabel(r.Plant), r.Material, r.Description.replace(/"/g, '""'), r.Unit,
                 r.Unrestricted, r.Value, r.Qty6Month, r.Qty4Month,
                 r.AvgDailyUse.toFixed(1), r.ThirtyDay, r.Mean.toFixed(1), Math.round(r.SafetyStock), Math.round(r.ROP),
                 r.DOS > 9999 ? "มาก" : r.DOS.toFixed(1), Math.round(r.RecommendedOrder),
@@ -1021,30 +1098,195 @@ function renderTable() {
         a.click();
         URL.revokeObjectURL(url);
     }
-    // คลิก Card หลัก - รีเซ็ต ABC/Moving filter
+
+    // Card click
     document.getElementById("cardTotalStock").onclick = () => { mode = "all"; abcFilter = ""; movingFilter = ""; applyFiltersAndRender(); };
     document.getElementById("cardOrderItems").onclick = () => { mode = "onlyOrder"; abcFilter = ""; movingFilter = ""; applyFiltersAndRender(); };
     document.getElementById("cardReturnValue").onclick = () => { mode = "returnable"; abcFilter = ""; movingFilter = ""; applyFiltersAndRender(); };
-    // คลิก Card ABC / Moving - กรองต่อเนื่อง (คง Plant + mode เดิม)
+
     document.getElementById("abcA").onclick = () => { abcFilter = "A"; movingFilter = ""; applyFiltersAndRender(); };
     document.getElementById("abcB").onclick = () => { abcFilter = "B"; movingFilter = ""; applyFiltersAndRender(); };
     document.getElementById("abcC").onclick = () => { abcFilter = "C"; movingFilter = ""; applyFiltersAndRender(); };
+
     document.getElementById("cardFast").onclick = () => { movingFilter = "Fast"; abcFilter = ""; applyFiltersAndRender(); };
     document.getElementById("cardMedium").onclick = () => { movingFilter = "Medium"; abcFilter = ""; applyFiltersAndRender(); };
     document.getElementById("cardSlow").onclick = () => { movingFilter = "Slow"; abcFilter = ""; applyFiltersAndRender(); };
     document.getElementById("cardSlowly").onclick = () => { movingFilter = "Slowly"; abcFilter = ""; applyFiltersAndRender(); };
     document.getElementById("cardDead").onclick = () => { movingFilter = "Dead"; abcFilter = ""; applyFiltersAndRender(); };
+
     document.getElementById("plantFilter").addEventListener("change", () => { mode = "all"; abcFilter = ""; movingFilter = ""; applyFiltersAndRender(); });
     ["leadTimeDays","safetyDays","coverDays","searchInput"].forEach(id => {
         document.getElementById(id).addEventListener("input", applyFiltersAndRender);
     });
+
     document.getElementById("exportBtn").onclick = exportToCSV;
-    // Help Modal Logic
+
+    // Help
     document.getElementById('helpBtn').addEventListener('click', () => {
         document.getElementById('helpModal').style.display = 'flex';
     });
     document.getElementById('closeHelpBtn').addEventListener('click', () => {
         document.getElementById('helpModal').style.display = 'none';
+    });
+
+    // ★ NEW: Graph functions
+    // ★ แทนที่ฟังก์ชัน buildPlantChart เดิมด้วยอันนี้
+function buildPlantChart() {
+    const data = lastBaseData && lastBaseData.length ? lastBaseData : allData;
+
+    // รวมข้อมูลระดับ Plant
+    const plantMap = new Map();
+    data.forEach(r => {
+        const code = r.Plant;
+        if (!code) return;
+        if (!plantMap.has(code)) {
+            plantMap.set(code, {
+                plant: code,
+                name: getPlantName(code),
+                type: getPlantType(code),
+                totalValue: 0,
+                overValue: 0,
+                stockValue: 0,
+                usageValue4m: 0
+            });
+        }
+        const agg = plantMap.get(code);
+        agg.totalValue += r.Value;
+        agg.overValue += r.ReturnValue;
+
+        const unit_price = r.Unrestricted > 0 ? r.Value / r.Unrestricted : 0;
+        agg.stockValue += r.Value;
+        agg.usageValue4m += (r.Qty4Month || 0) * unit_price;
+    });
+
+    const summaries = [];
+    plantMap.forEach(agg => {
+        const dailyUsage = agg.usageValue4m / 120 || 0;
+        const stockDays = dailyUsage > 0 ? Math.round(agg.stockValue / dailyUsage) : 0;
+        summaries.push({
+            plant: agg.plant,
+            name: agg.name,
+            type: agg.type,
+            totalValue: agg.totalValue,
+            overValue: agg.overValue,
+            stockDays: stockDays
+        });
+    });
+
+    // แยก Company / SA และเรียงตาม Stock Days มาก→น้อย
+    const company = summaries.filter(p => p.type === 'Company').sort((a,b)=>b.stockDays - a.stockDays);
+    const sa      = summaries.filter(p => p.type === 'SA').sort((a,b)=>b.stockDays - a.stockDays);
+    const ordered = [...company, ...sa];
+
+    const labels        = ordered.map(p => p.name ? `${p.plant} ${p.name}` : p.plant);
+    const values        = ordered.map(p => p.totalValue);
+    const overvalues    = ordered.map(p => p.overValue);
+    const stockDaysArr  = ordered.map(p => p.stockDays || 0);
+    const target60      = new Array(labels.length).fill(60); // เส้นเป้า 60 วัน
+
+    const ctx = document.getElementById('plantChart').getContext('2d');
+    if (plantChart) plantChart.destroy();
+
+    plantChart = new Chart(ctx, {
+        type: 'bar',   // ใช้ bar เป็น type หลัก
+        data: {
+            labels,
+            datasets: [
+                // แท่งมูลค่าคงเหลือ (ซ้าย)
+                {
+                    label: 'มูลค่าคงเหลือ',
+                    type: 'bar',
+                    data: values,
+                    yAxisID: 'y',
+                    borderWidth: 1
+                },
+                // เส้นมูลค่า OverStock (ซ้าย)
+                {
+                    label: 'มูลค่า OverStock',
+                    type: 'line',
+                    data: overvalues,
+                    yAxisID: 'y',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.2,
+                    borderDash: [5,5]
+                },
+                // เส้น Stock Days (ขวา)
+                {
+                    label: 'Stock Days',
+                    type: 'line',
+                    data: stockDaysArr,
+                    yAxisID: 'y1',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.2,
+                    pointRadius: 3
+                },
+                // เส้นเป้า Stock Days 60 วัน (ขวา)
+                {
+                    label: 'เป้า Stock Days 60 วัน',
+                    type: 'line',
+                    data: target60,
+                    yAxisID: 'y1',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0,
+                    pointRadius: 0,
+                    borderDash: [8,4]
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true }
+            },
+            scales: {
+                // แกนซ้าย: มูลค่า
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'มูลค่า'
+                    },
+                    ticks: {
+                        callback: function(value) {
+                            if (value >= 1e9) return (value/1e9).toFixed(1)+'B';
+                            if (value >= 1e6) return (value/1e6).toFixed(1)+'M';
+                            if (value >= 1e3) return (value/1e3).toFixed(0)+'K';
+                            return value;
+                        }
+                    }
+                },
+                // แกนขวา: Stock Days
+                y1: {
+                    beginAtZero: true,
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Stock Days (วัน)'
+                    },
+                    grid: {
+                        drawOnChartArea: false // ไม่ให้เส้น grid ทับกัน
+                    }
+                },
+                x: {
+                    ticks: {
+                        maxRotation: 60,
+                        minRotation: 45,
+                    }
+                }
+            }
+        }
+    });
+}
+
+    document.getElementById('graphBtn').addEventListener('click', () => {
+        document.getElementById('graphModal').style.display = 'flex';
+        buildPlantChart();
+    });
+    document.getElementById('closeGraphBtn').addEventListener('click', () => {
+        document.getElementById('graphModal').style.display = 'none';
     });
 });
 </script>
